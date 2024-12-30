@@ -1,0 +1,347 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局变量 - 修改为浅色主题 */
+:root {
+    --bg-dark: #ffffff;          /* 改为白色背景 */
+    --bg-sidebar: #0f1012;       /* 保持侧边栏深色 */
+    --text-primary: #333333;     /* 改为深灰色文本 */
+    --text-secondary: #666666;   /* 改为中灰色文本 */
+    --accent-color: #3498db;     /* 保持不变 */
+    --link-color: #2980b9;       /* 保持不变 */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;    /* 改为白色背景 */
+    color: var(--text-primary);
+    display: flex;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* 侧边栏样式优化 */
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-sidebar);
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 16, 18, 0.75);  /* 增加遮罩层不透明度 */
+    z-index: 0;
+}
+
+.profile, .main-nav, .sidebar-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* 头像容器样式优化 */
+.profile {
+    text-align: center;
+    margin-bottom: 3rem;        /* 增加底部间距 */
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+}
+
+/* 头像样式优化 */
+.avatar {
+    width: 140px;               /* 增加尺寸以提高清晰度 */
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: center 35%;  /* 稍微向下调整图片位置 */
+    border: 4px solid rgba(255, 255, 255, 0.2);  /* 增加边框宽度和亮度 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);   /* 增强阴影效果 */
+    filter: brightness(1.05);    /* 稍微提高亮度 */
+}
+
+/* 可以添加一个额外的类来微调位置 */
+.avatar-adjust {
+    transform: translateY(20px);  /* 向下移动更多 */
+}
+
+/* 标题样式优化 */
+.blog-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;                    /* 改为纯白色 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  /* 加深文字阴影 */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.blog-subtitle {
+    color: rgba(255, 255, 255, 0.9);   /* 略微透明的白色 */
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);  /* 加深文字阴影 */
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* 导航菜单优化 */
+.main-nav {
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #ffffff;                    /* 改为纯白色 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);  /* 加深文字阴影 */
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #ffffff;                    /* 保持纯白色 */
+    background-color: rgba(0, 0, 0, 0.4);  /* 加深悬停背景 */
+    transform: translateX(5px);
+}
+
+/* 侧边栏底部图标 */
+.sidebar-footer {
+    display: none;
+}
+
+/* 主要内容区域布局优化 */
+.main-content {
+    margin-left: 280px;
+    padding: 2rem;
+    flex: 1;                    /* 让内容区域自适应剩余宽度 */
+    max-width: 1200px;         /* 增加最大宽度 */
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+.main-content::before {
+    display: none;
+}
+
+.welcome-section, .articles {
+    position: static;
+    z-index: auto;
+}
+
+.welcome-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.welcome-text {
+    color: #666666;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 文章列表容器 */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.article-card {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.article-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.article-title {
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.article-date {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .article-card {
+        padding: 1rem;
+    }
+}
+
+.article-content {
+    color: #333;
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.article-error {
+    color: #ff4444;
+    margin-top: 1rem;
+}
+
+.article-item {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} 
+
+/* 调整标题样式 */
+.articles h2 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #333333;            /* 深灰色 */
+} 
+
+/* 关于页面特定样式 */
+.article-content {
+    color: #333333;            /* 深灰色文本 */
+    line-height: 1.8;
+}
+
+.article-content h2 {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    color: #333333;            /* 深灰色文本 */
+}
+
+.article-content ul {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.article-content ul li {
+    margin-bottom: 0.8rem;
+    color: #333333;            /* 深灰色文本 */
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+    color: #666666;            /* 稍浅的灰色文本 */
+}
+
+.contact-info {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);  /* 浅色边框 */
+    font-weight: 500;
+    color: #333333;            /* 深灰色文本 */
+} 
+
+/* 导航文本样式 */
+.nav-text {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #ffffff;                    /* 改为纯白色 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);  /* 加深文字阴影 */
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 保持与链接相同的样式 */
+.main-nav .nav-text {
+    cursor: default;  /* 移除鼠标手型 */
+}
+
+.main-nav .nav-text.active {
+    background-color: rgba(0, 0, 0, 0.4);  /* 加深悬停背景 */
+} 
+
+.qrcode-section {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.qrcode-container {
+    margin-top: 1rem;
+}
+
+.qrcode-img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qrcode-desc {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+} 
+
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #333333;            /* 深灰色 */
+} 
+
+/* 响应式布局优化 */
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .article-list {
+        grid-template-columns: 1fr;  /* 在小屏幕上改为单列 */
+    }
+} 

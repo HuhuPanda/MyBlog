@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandahu的博客</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="scripts/markdown.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="assets/avatar.jpg" alt="头像" class="avatar avatar-adjust">
+            <h1 class="blog-title">Pandahu的博客</h1>
+            <p class="blog-subtitle">专注英语学习、产品运营</p>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><span class="nav-text">首页</span></li>
+                <li><a href="pages/about.html">关于我</a></li>
+            </ul>
+        </nav>
+
+        <!-- 删除或注释掉这部分 -->
+        <!--
+        <div class="sidebar-footer">
+            <a href="#" class="icon-button search">🔍</a>
+            <a href="#" class="icon-button link">🔗</a>
+            <a href="#" class="icon-button rss">📰</a>
+        </div>
+        -->
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">首页</h1>
+        <div class="welcome-section">
+            <p class="welcome-text">
+                <span>欢迎来到「Pandahu 的博客」，个人独立博客。</span>
+                <span>我会在这里持续记录个人经历、经验和思考。</span>
+            </p>
+        </div>
+
+        <section class="articles">
+            <h2>最新文章</h2>
+            <div class="article-list" id="articleContainer">
+                <!-- 文章将通过 JavaScript 动态加载 -->
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
