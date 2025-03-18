@@ -345,3 +345,51 @@ body {
         grid-template-columns: 1fr;  /* 在小屏幕上改为单列 */
     }
 } 
+
+/* 语言切换器样式 */
+.language-selector {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.language-selector button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.language-selector button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-selector button.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    .language-selector button {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .language-selector button:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .language-selector button.active {
+        background: rgba(255, 255, 255, 0.25);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .language-selector {
+        margin-top: 1rem;
+    }
+} 

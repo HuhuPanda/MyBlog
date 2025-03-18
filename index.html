@@ -2,54 +2,62 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pandahu的博客</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RXHPE2FCR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5RXHPE2FCR');
+    </script>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="scripts/markdown.js"></script>
+    <link rel="preload" href="assets/avatar.jpg" as="image">
+    <script src="scripts/i18n.js" defer></script>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="profile">
-            <img src="assets/avatar.jpg" alt="头像" class="avatar avatar-adjust">
-            <h1 class="blog-title">Pandahu的博客</h1>
-            <p class="blog-subtitle">专注英语学习、产品运营</p>
-        </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><span class="nav-text">首页</span></li>
-                <li><a href="pages/about.html">关于我</a></li>
-            </ul>
-        </nav>
-
-        <!-- 删除或注释掉这部分 -->
-        <!--
-        <div class="sidebar-footer">
-            <a href="#" class="icon-button search">🔍</a>
-            <a href="#" class="icon-button link">🔗</a>
-            <a href="#" class="icon-button rss">📰</a>
-        </div>
-        -->
-    </aside>
-
-    <main class="main-content">
-        <h1 class="page-title">首页</h1>
-        <div class="welcome-section">
-            <p class="welcome-text">
-                <span>欢迎来到「Pandahu 的博客」，个人独立博客。</span>
-                <span>我会在这里持续记录个人经历、经验和思考。</span>
-            </p>
-        </div>
-
-        <section class="articles">
-            <h2>最新文章</h2>
-            <div class="article-list" id="articleContainer">
-                <!-- 文章将通过 JavaScript 动态加载 -->
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="assets/avatar.jpg" alt="头像" class="avatar">
+                <h1 class="blog-title" data-i18n="blog_title">Pandahu的博客</h1>
+                <p class="blog-subtitle" data-i18n="blog_subtitle">专注英语学习、产品运营</p>
             </div>
-        </section>
-    </main>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><span class="nav-text" data-i18n="home">首页</span></li>
+                    <li><a href="pages/about.html" data-i18n="about">关于我</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 语言切换器 -->
+            <div class="language-selector">
+                <button data-lang="zh-CN">简体</button>
+                <button data-lang="zh-TW">繁體</button>
+                <button data-lang="en">EN</button>
+            </div>
+        </aside>
 
-    <script src="scripts/main.js"></script>
+        <main class="main-content">
+            <h1 class="page-title" data-i18n="page_title">首页</h1>
+            <div class="welcome-section">
+                <p class="welcome-text">
+                    <span data-i18n="welcome_title">欢迎来到「Pandahu 的博客」，个人独立博客。</span>
+                    <span data-i18n="welcome_desc">我会在这里持续记录个人经历、经验和思考。</span>
+                </p>
+            </div>
+
+            <section class="articles">
+                <h2 data-i18n="latest_articles">最新文章</h2>
+                <div class="article-list" id="articleContainer">
+                    <!-- 文章将通过 JavaScript 动态加载 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 </html> 

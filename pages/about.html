@@ -4,49 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我 - Pandahu的博客</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RXHPE2FCR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5RXHPE2FCR');
+    </script>
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/post.css">
+    <script src="../scripts/i18n.js" defer></script>
+    <style>
+        /* 关于我页面特定样式 */
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .about-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+        }
+
+        .goals-section {
+            margin: 2rem 0;
+        }
+
+        .goals-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .goals-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .goals-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .goals-list li:before {
+            content: "•";
+            color: #3eaf7c;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .qrcode-container {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .qrcode-container img {
+            max-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .about-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .goals-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* 回到首页链接 */
+        .back-home {
+            display: inline-block;
+            margin: 1rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .back-home:hover {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="profile">
-            <img src="../assets/avatar.jpg" alt="头像" class="avatar">
-            <h1 class="blog-title">Pandahu的博客</h1>
-            <p class="blog-subtitle">专注英语学习、产品运营</p>
+    <a href="../index.html" class="back-home" data-i18n="back_home">← 返回首页</a>
+    
+    <div class="container">
+        <div class="language-selector" style="position: absolute; top: 1rem; right: 1rem;">
+            <button data-lang="zh-CN">简体</button>
+            <button data-lang="zh-TW">繁體</button>
+            <button data-lang="en">EN</button>
         </div>
         
-        <nav class="main-nav">
-            <ul>
-                <li><a href="../index.html">首页</a></li>
-                <li><span class="nav-text active">关于我</span></li>
-            </ul>
-        </nav>
-    </aside>
-    
-    <main class="main-content">
-        <article class="post">
-            <h1>关于我</h1>
-            <div class="post-content">
-                <p>90后，产品运营人一枚，业余时间经营一家网店和英语学习中</p>
-
-                <h2>2025年目标：</h2>
-                <ul>
-                    <li>完成12本英语原版书籍</li>
-                    <li>听力好到能参加雅思考试，顺利通过雅思考试</li>
-                    <li>上10个站，走通出海网站流程，并希望取得美元收入</li>
+        <div class="about-content">
+            <h1 class="about-title" data-i18n="about_title">关于我</h1>
+            
+            <p class="about-intro" data-i18n="about_intro">90后，产品运营人一枚，业余时间经营一家网店和英语学习中</p>
+            
+            <div class="goals-section">
+                <h2 class="goals-title" data-i18n="goals_title">2025年目标：</h2>
+                <ul class="goals-list">
+                    <li data-i18n="goal_1">完成12本英语原版书籍</li>
+                    <li data-i18n="goal_2">听力好到能参加雅思考试，顺利通过雅思考试</li>
+                    <li data-i18n="goal_3">上10个站点，走通出海网站流程，并希望取得美元收入</li>
                 </ul>
-
-                <div class="qrcode-section">
-                    <h3>关注我的公众号：湖畔花园，一起成长。</h3>
-                    <div class="qrcode-container">
-                        <img src="../images/qrcode.jpg" alt="公众号二维码" class="qrcode-img">
-                        <p class="qrcode-desc">扫码关注，获取更多精彩内容</p>
-                    </div>
+            </div>
+            
+            <div class="contact-section">
+                <h3 class="contact-title" data-i18n="contact_title">关注我的公众号：湖畔花园，一起成长。</h3>
+                <div class="qrcode-container">
+                    <img src="../images/qrcode.jpg" alt="公众号二维码">
                 </div>
             </div>
-        </article>
-    </main>
+        </div>
+    </div>
 
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/main.js" defer></script>
 </body>
 </html> 
