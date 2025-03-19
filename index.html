@@ -17,6 +17,13 @@
     <script src="scripts/i18n.js" defer></script>
 </head>
 <body>
+    <!-- 语言切换器 - 固定在右上角 -->
+    <div class="language-selector">
+        <button data-lang="zh-CN">简体</button>
+        <button data-lang="zh-TW">繁體</button>
+        <button data-lang="en">EN</button>
+    </div>
+    
     <div class="container">
         <aside class="sidebar">
             <div class="profile">
@@ -32,12 +39,7 @@
                 </ul>
             </nav>
             
-            <!-- 语言切换器 -->
-            <div class="language-selector">
-                <button data-lang="zh-CN">简体</button>
-                <button data-lang="zh-TW">繁體</button>
-                <button data-lang="en">EN</button>
-            </div>
+            <!-- 移除旧的语言切换器 -->
         </aside>
 
         <main class="main-content">

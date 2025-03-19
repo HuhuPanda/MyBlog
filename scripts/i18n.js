@@ -162,23 +162,30 @@ document.addEventListener('DOMContentLoaded', () => {
  * 初始化语言选择器
  */
 function initLanguageSelector() {
-    const languageSelector = document.querySelector('.language-selector');
-    if (!languageSelector) return;
+    const languageSelectors = document.querySelectorAll('.language-selector');
+    if (languageSelectors.length === 0) return;
     
-    const buttons = languageSelector.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const lang = button.getAttribute('data-lang');
-            switchLanguage(lang);
+    languageSelectors.forEach(languageSelector => {
+        const buttons = languageSelector.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                switchLanguage(lang);
+                
+                // 更新所有语言选择器的选中状态
+                document.querySelectorAll('.language-selector button').forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            });
             
-            // 更新选中状态
-            buttons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            // 初始化选中状态
+            if (button.getAttribute('data-lang') === getCurrentLanguage()) {
+                button.classList.add('active');
+            }
         });
-        
-        // 初始化选中状态
-        if (button.getAttribute('data-lang') === getCurrentLanguage()) {
-            button.classList.add('active');
-        }
     });
 } 

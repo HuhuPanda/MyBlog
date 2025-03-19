@@ -4,6 +4,16 @@
  */
 const BLOG_POSTS = [
     {
+        id: 6,
+        title: {
+            'zh-CN': 'APP分发渠道的思考总结',
+            'zh-TW': 'APP分發渠道的思考總結',
+            'en': 'Reflections on APP Distribution Channels'
+        },
+        date: '2025-03-18',
+        url: 'posts/APP分发渠道的思考总结.html'
+    },
+    {
         id: 1,
         title: {
             'zh-CN': '英语学习：如何有效提高听力水平',

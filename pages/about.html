@@ -125,14 +125,17 @@
     </style>
 </head>
 <body>
+    <!-- 语言切换器 - 固定在右上角 -->
+    <div class="language-selector">
+        <button data-lang="zh-CN">简体</button>
+        <button data-lang="zh-TW">繁體</button>
+        <button data-lang="en">EN</button>
+    </div>
+    
     <a href="../index.html" class="back-home" data-i18n="back_home">← 返回首页</a>
     
     <div class="container">
-        <div class="language-selector" style="position: absolute; top: 1rem; right: 1rem;">
-            <button data-lang="zh-CN">简体</button>
-            <button data-lang="zh-TW">繁體</button>
-            <button data-lang="en">EN</button>
-        </div>
+        <!-- 移除原来的语言选择器 -->
         
         <div class="about-content">
             <h1 class="about-title" data-i18n="about_title">关于我</h1>
