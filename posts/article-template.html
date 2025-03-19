@@ -12,6 +12,8 @@
         gtag('js', new Date());
         gtag('config', 'G-5RXHPE2FCR');
     </script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../scripts/i18n.js" defer></script>
     <style>
         /* 重置基础样式 */
         * {
@@ -115,13 +117,20 @@
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-home">← 返回首页</a>
+    <!-- 语言切换器 - 固定在右上角 -->
+    <div class="language-selector">
+        <button data-lang="zh-CN">简体</button>
+        <button data-lang="zh-TW">繁體</button>
+        <button data-lang="en">EN</button>
+    </div>
+    
+    <a href="../index.html" class="back-home" data-i18n="back_home">← 返回首页</a>
     
     <article>
         <header class="article-header">
             <h1 class="article-title">文章标题</h1>
             <div class="article-meta">
-                发布于 <time>2024-01-01</time>
+                <span data-i18n="published_on">发布于</span> <time>2024-01-01</time>
             </div>
         </header>
 
@@ -129,5 +138,7 @@
             <!-- 文章内容 -->
         </div>
     </article>
+    
+    <script src="../scripts/main.js" defer></script>
 </body>
 </html> 
