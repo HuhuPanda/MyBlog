@@ -393,3 +393,36 @@ body {
         font-size: 12px;
     }
 } 
+
+/* Buy me a coffee 按钮样式 */
+.coffee-btn-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.coffee-btn {
+    background-color: #ff813f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.coffee-btn:before {
+    content: '☕';
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.coffee-btn:hover {
+    background-color: #e86a28;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+} 
