@@ -37,14 +37,7 @@ const translations = {
         'read_more': '阅读更多',
         
         // 文章标题
-        'title_app_distribution': 'APP分发渠道的思考总结',
-        
-        // 打赏功能
-        'coffee_btn': '请我喝杯咖啡',
-        'donate_title': '感谢您的支持',
-        'donate_description': '如果您觉得我的内容对您有帮助，欢迎请我喝杯咖啡！',
-        'donate_wechat': '微信支付',
-        'donate_alipay': '支付宝'
+        'title_app_distribution': 'APP分发渠道的思考总结'
     },
     'zh-TW': {
         // 導航
@@ -78,14 +71,7 @@ const translations = {
         'read_more': '閱讀更多',
         
         // 文章標題
-        'title_app_distribution': 'APP分發渠道的思考總結',
-        
-        // 打賞功能
-        'coffee_btn': '請我喝杯咖啡',
-        'donate_title': '感謝您的支持',
-        'donate_description': '如果您覺得我的內容對您有幫助，歡迎請我喝杯咖啡！',
-        'donate_wechat': '微信支付',
-        'donate_alipay': '支付寶'
+        'title_app_distribution': 'APP分發渠道的思考總結'
     },
     'en': {
         // Navigation
@@ -119,14 +105,7 @@ const translations = {
         'read_more': 'Read More',
         
         // Article titles
-        'title_app_distribution': 'Reflections on APP Distribution Channels',
-        
-        // Donate Function
-        'coffee_btn': 'Buy me a coffee',
-        'donate_title': 'Thank You for Your Support',
-        'donate_description': 'If you find my content helpful, feel free to buy me a coffee!',
-        'donate_wechat': 'WeChat Pay',
-        'donate_alipay': 'Alipay'
+        'title_app_distribution': 'Reflections on APP Distribution Channels'
     }
 };
 
