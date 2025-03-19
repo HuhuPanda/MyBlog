@@ -114,7 +114,7 @@ const translations = {
  * @returns {string} 当前语言代码
  */
 function getCurrentLanguage() {
-    return localStorage.getItem('language') || 'zh-CN';
+    return localStorage.getItem('language') || 'zh-TW';
 }
 
 /**
