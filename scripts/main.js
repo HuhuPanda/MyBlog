@@ -132,48 +132,12 @@ function initializeSidebar() {
     sidebar.innerHTML = profile + nav;
 }
 
-/**
- * 初始化打赏功能
- */
-function initializeDonate() {
-    const coffeeButtons = document.querySelectorAll('.coffee-btn');
-    const donateModal = document.querySelector('.donate-modal');
-    const closeButton = document.querySelector('.donate-modal-close');
-    
-    if (coffeeButtons.length === 0 || !donateModal || !closeButton) return;
-    
-    // 打开打赏弹窗
-    coffeeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            donateModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // 防止背景滚动
-        });
-    });
-    
-    // 关闭打赏弹窗
-    closeButton.addEventListener('click', () => {
-        donateModal.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-    
-    // 点击背景关闭弹窗
-    donateModal.addEventListener('click', (e) => {
-        if (e.target === donateModal) {
-            donateModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
-
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
     initializeSidebar();
     if (document.getElementById('articleContainer')) {
         renderArticles();
     }
-    
-    // 初始化打赏功能
-    initializeDonate();
 });
 
 // 监听语言变化事件，重新渲染文章列表
