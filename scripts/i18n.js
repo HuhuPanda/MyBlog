@@ -34,7 +34,10 @@ const translations = {
         'published_on': '发布于',
         
         // 公共部分
-        'read_more': '阅读更多'
+        'read_more': '阅读更多',
+        
+        // 文章标题
+        'title_app_distribution': 'APP分发渠道的思考总结'
     },
     'zh-TW': {
         // 導航
@@ -65,7 +68,10 @@ const translations = {
         'published_on': '發布於',
         
         // 公共部分
-        'read_more': '閱讀更多'
+        'read_more': '閱讀更多',
+        
+        // 文章標題
+        'title_app_distribution': 'APP分發渠道的思考總結'
     },
     'en': {
         // Navigation
@@ -96,7 +102,10 @@ const translations = {
         'published_on': 'Published on',
         
         // Common parts
-        'read_more': 'Read More'
+        'read_more': 'Read More',
+        
+        // Article titles
+        'title_app_distribution': 'Reflections on APP Distribution Channels'
     }
 };
 
@@ -127,6 +136,14 @@ function updatePageLanguage() {
     // 更新HTML元素中的文本
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
+        if (langData[key]) {
+            element.textContent = langData[key];
+        }
+    });
+    
+    // 处理自定义i18n属性，用于特定场景如文章标题
+    document.querySelectorAll('[data-i18n-custom]').forEach(element => {
+        const key = element.getAttribute('data-i18n-custom');
         if (langData[key]) {
             element.textContent = langData[key];
         }
